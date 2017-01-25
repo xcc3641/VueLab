@@ -13,6 +13,11 @@
     margin-top: 20px;
 }
 
+.title{
+    margin-top: 40px;
+    color: lightpink;
+}
+
 .clearfix:before,
 .clearfix:after {
     display: table;
