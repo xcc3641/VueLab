@@ -9,14 +9,14 @@
 </head>
 <body>
 <div id="app">
-    <el-row>
-            <div v-for="item in girlData.results">
-                <el-card :body-style="{ padding: '0px' }" class="warp_image">
-                    <a v-bind:href="item.url">
-                        <img v-bind:src="item.url" class="image"/>
-                    </a>
-                </el-card>
-            </div>
+    <el-row  v-loading.fullscreen.lock="fullscreenLoading">
+        <div v-for="item in girlData.results" >
+            <el-card :body-style="{ padding: '0px' }" class="warp_image">
+                <a v-bind:href="item.url">
+                    <img v-bind:src="item.url" class="image"/>
+                </a>
+            </el-card>
+        </div>
     </el-row>
     <el-button-group class="bottom">
         <el-button type="primary" icon="arrow-left" v-if="count !=1" @click="toNextPage(false)">上一页</el-button>
