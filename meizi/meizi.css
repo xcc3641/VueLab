@@ -1,0 +1,30 @@
+
+.bottom {
+    margin-top: 20px;
+    line-height: 12px;
+}
+
+.image {
+    width: 100%;
+    height:100%;
+    display: block;
+}
+.warp_image{
+    margin-top: 20px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both
+}
+
+#app{
+    margin:0 auto;		/* 居中 这个是必须的，，其它的属性非必须 */
+    width:500px;		/* 给个宽度 顶到浏览器的两边就看不出居中效果了 */
+    text-align:center; 	/* 文字等内容居中 */
+}
