@@ -17,7 +17,7 @@
         </header>
         <main>
             <h2>{{essay.data.hp_title}}</h2>
-            <div>{{essay.data.hp_content}}</div>
+            <div v-html=essay.data.hp_content></div>
         </main>
     </el-row>
 </div>
