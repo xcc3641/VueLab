@@ -18,9 +18,9 @@ var vm = new Vue({
         },
         methods: {
             getMeizi: function () {
-                this.fullscreenLoading = true;
                 var xhr = new XMLHttpRequest();
                 var self = this;
+                self.fullscreenLoading = true;
                 xhr.open('GET', meizi_url + this.count);
                 xhr.onload = function () {
                     self.girlData = JSON.parse(xhr.responseText);

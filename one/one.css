@@ -1,0 +1,26 @@
+
+body {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    padding: 15px;
+}
+
+img {
+    box-shadow: rgb(102, 102, 102) 0.2em 0.2em 0.5em
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    line-height : 1.67;
+}
+
+.title {
+    font-size: 14px;
+    margin: 20px;
+}
+

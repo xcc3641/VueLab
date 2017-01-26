@@ -2,7 +2,7 @@
 <html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>看妹子</title>
+    <title>「看妹子」</title>
     <link rel="stylesheet" type="text/css" href="meizi.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -10,8 +10,8 @@
 <body>
 <div id="app">
     <h1 class="title">妹子们 ：）</h1>
-    <el-row  v-loading.fullscreen.lock="fullscreenLoading">
-        <div v-for="item in girlData.results" >
+    <el-row v-loading.fullscreen.lock="fullscreenLoading">
+        <div v-for="item in girlData.results">
             <el-card :body-style="{ padding: '0px' }" class="warp_image">
                 <a v-bind:href="item.url">
                     <img v-bind:src="item.url" class="image"/>
@@ -20,14 +20,15 @@
         </div>
     </el-row>
     <el-button-group class="bottom">
-        <el-button type="primary" size="large" icon="arrow-left" v-if="count !=1" @click="toNextPage(false)">上一页</el-button>
+        <el-button type="primary" size="large" icon="arrow-left" v-if="count !=1" @click="toNextPage(false)">上一页
+        </el-button>
         <el-button type="primary" size="large" @click="toNextPage(true)">下一页<i class="el-icon-arrow-right el-icon--right"></i>
         </el-button>
     </el-button-group>
 </div>
 
 <script src="../js/vue.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="meizi.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </body>
 </html>

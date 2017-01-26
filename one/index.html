@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>「One 一个」</title>
+    <link rel="stylesheet" type="text/css" href="one.css">
+    <link rel="shortcut icon" type="image/png" href="../asset/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <!--仅供学习交流使用-->
+</head>
+<body>
+<div id="app">
+    <el-row v-loading.fullscreen.lock="fullscreenLoading">
+        <header>
+            <img v-bind:src="detail.data.hp_img_original_url">
+            <strong class="title"><p>{{detail.data.hp_content}}</p></strong>
+        </header>
+        <main>
+            <h2>{{essay.data.hp_title}}</h2>
+            <div>{{essay.data.hp_content}}</div>
+        </main>
+    </el-row>
+</div>
+<script src="../js/vue.js"></script>
+<script src="../js/vue-resource.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="one.js"></script>
+</body>
+</html>
