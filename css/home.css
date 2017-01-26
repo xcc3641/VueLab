@@ -1,0 +1,36 @@
+@import 'https://fonts.googleapis.com/css?family=Satisfy';
+
+body, main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, p, span {
+    font-family: 'Satisfy', sans-serif;
+}
+
+a {
+    text-decoration: none; /*CSS 下划线效果：无下划线 */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    margin-bottom: 1em;
+}
+
+.demo {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: rgb(98, 204, 255);
+    border: 1px solid rgb(100, 200, 255);
+    border-radius: 0.4rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
