@@ -1,7 +1,7 @@
 
 body {
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
-    padding: 15px;
+    padding: 0.75rem;
 }
 
 img {
@@ -20,7 +20,7 @@ main{
 }
 
 .title {
-    font-size: 14px;
-    margin: 20px;
+    margin: 2rem;
+    font-size: 1.2rem;
 }
 
