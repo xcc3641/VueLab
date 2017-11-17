@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Rabbit : Home</title>
+        <link rel="icon" type="image/icon" href="assets/images/tabicon.ico">
+
+        <link rel="stylesheet" type="text/css" href="">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700,700i|Josefin+Sans:700" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="icon" href="assets/images/logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+        <script src="assets/js/typing.js"></script>
+    </head>
+
+    <body>
+        <div id="index">                                           <!-- Index starts here -->
+            <div style="display: none;" id="source">
+                  测试中文 Hi, I am Rabbit, Web developer from michigan 
+                  <br/> 
+                <img class="circle-image" src="assets/images/avatar_other.jpeg">
+            </div>
+            <div class="container main">
+                <div class="row home">
+                    <div id = "index_left" class="col-md-6 left">
+                        <img class="img-responsive img-rabbit" src="assets/images/home.jpg">
+                    </div>
+                    <div id = "index_right" class="col-md-6 text-center right">
+                        <div class="logo">
+                            <img class="circle-image" src="assets/images/avatar_me.jpeg">
+                        </div>
+
+                        <div id="output-wrap">
+                               <span id="output"></span>
+                               <span class="typing-cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>                                                      <!-- index ends here -->
+        
+        <script src="assets/js/jquery-3.1.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script type="text/javascript">
+            var typing = new Typing({
+              source: document.getElementById('source'),
+              output: document.getElementById('output'),
+              delay: 120,
+              done: function() {
+                console.log(this);
+                console.log('done')
+              }
+            });
+            typing.start();
+        </script>
+    </body>
+</html>
