@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>「One 一个」</title>
@@ -7,21 +8,23 @@
     <link rel="shortcut icon" type="image/png" href="../asset/favicon.png">
     <!--仅供学习交流使用-->
 </head>
+
 <body>
-<div id="app" class="ui vertical padded segment">
-  <!-- <div class="ui centered card">
+    <div id="app" class="ui vertical padded segment">
+        <!-- <div class="ui centered card">
       <img class="ui massive image" v-bind:src="detail.data.hp_img_original_url">
     <div class="content">
       <p class="title">{{detail.data.hp_content}}</p>
     </div>
   </div> -->
-  <div class="ui container segment">
-          <div class="ui large header">{{essay.data.hp_title}}</div>
-          <div v-html=essay.data.hp_content></div>
-  </div>
-</div>
-<script src="../js/vue.js"></script>
-<script src="../js/vue-resource.js"></script>
-<script src="one.js"></script>
+        <div class="ui container segment">
+            <div class="ui large header">{{essay.data.hp_title}}</div>
+            <div v-html=essay.data.hp_content></div>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <script src="one.js"></script>
 </body>
+
 </html>
