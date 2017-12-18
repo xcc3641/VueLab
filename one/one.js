@@ -86,6 +86,10 @@ new Vue({
             })
         },
 
+        get_load_status: function(){
+          return `ui ${this.fullscreenLoading ? "active" : "disabled"} inverted dimmer`;
+        },
+
     }
 
 });

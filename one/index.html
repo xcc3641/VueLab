@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>「One 一个」</title>
     <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="../asset/favicon.png">
     <!--仅供学习交流使用-->
 </head>
@@ -26,8 +26,18 @@
         </div> -->
         <div class="ui hidden divider"></div>
         <div class="ui raised padded  text container segment">
-                <div class="ui large header">{{essay.data.hp_title}}</div>
-                <div v-html=essay.data.hp_content></div>
+
+            <!-- <div class="ui active inverted dimmer">
+                <div class="ui text loader">Loading</div>
+            </div> -->
+
+            <div v-bind:class="get_load_status()">
+                <div class="ui text loader">Loading</div>
+            </div>
+
+
+            <div class="ui large header">{{essay.data.hp_title}}</div>
+            <div v-html=essay.data.hp_content></div>
         </div>
         <div class="ui hidden divider"></div>
     </div>
