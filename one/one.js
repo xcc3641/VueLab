@@ -34,14 +34,17 @@ new Vue({
         id_list: {
             data: []
         },
+
         detail: {
             data: {
+                // forward & img_url
                 content_list:[],
                 menu:{
                   vol: null
                 }
             }
         },
+
         essay: {
             data: {
                 hp_title: null,
@@ -72,6 +75,7 @@ new Vue({
             that.$http.get(this.detail_url+id+"/0").then((response) => {
                 this.detail = response.data;
                 this.get_essay(this.detail.data.menu.vol);
+                console.log(this.detail.data.content_list.length);
             })
         },
 

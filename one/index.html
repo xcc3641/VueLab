@@ -10,16 +10,27 @@
 </head>
 
 <body>
-    <div id="app" class="ui vertical padded segment">
-        <!-- <div class="ui centered card">
-      <img class="ui massive image" v-bind:src="detail.data.hp_img_original_url">
-    <div class="content">
-      <p class="title">{{detail.data.hp_content}}</p>
-    </div>
-  </div> -->
-        <div class="ui container segment">
-            <div class="ui large header">{{essay.data.hp_title}}</div>
-            <div v-html=essay.data.hp_content></div>
+    <div id="app">
+        <!-- <div class="ui basic very padded segment">
+            <div class="ui three stackable cards">
+                <div class="card" v-if="detail.data.content_list.length !==0" v-for="item in detail.data.content_list">
+                    <div class="image">
+                        <img class="ui medium image" v-bind:src="item.img_url">
+                    </div>
+                    <div class="content">
+                        <p class="title">{{item.forward}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="ui raised padded  text container segment">
+                <div class="ui large header">{{essay.data.hp_title}}</div>
+                <div v-html=essay.data.hp_content></div>
+        </div>
+
+        <div class="main container">
+
         </div>
     </div>
     <script src="../js/vue.js"></script>
