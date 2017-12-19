@@ -29,7 +29,7 @@ new Vue({
         detail_url: 'http://v3.wufazhuce.com:8000/api/onelist/', //${id}/0
         essay_url: 'http://v3.wufazhuce.com:8000/api/essay/',
 
-        fullscreenLoading: false,
+        fullscreenLoading: true,
 
         id_list: {
             data: []
@@ -38,9 +38,9 @@ new Vue({
         detail: {
             data: {
                 // forward & img_url
-                content_list:[],
-                menu:{
-                  vol: null
+                content_list: [],
+                menu: {
+                    vol: null
                 }
             }
         },
@@ -54,40 +54,39 @@ new Vue({
 
     },
 
-    created: function () {
+    created: function() {
         this.get_id();
     },
 
     methods: {
-        get_id: function () {
+        get_id: function() {
             var that = this;
             that.fullscreenLoading = true;
             that.$http.get(this.id_list_url).then((response) => {
                 this.id_list = response.data;
                 this.get_detail(this.id_list.data[0]);
-                that.fullscreenLoading = false;
             })
 
         },
 
-        get_detail: function (id) {
+        get_detail: function(id) {
             var that = this;
-            that.$http.get(this.detail_url+id+"/0").then((response) => {
+            that.$http.get(this.detail_url + id + "/0").then((response) => {
                 this.detail = response.data;
                 this.get_essay(this.detail.data.menu.vol);
-                console.log(this.detail.data.content_list.length);
             })
         },
 
-        get_essay: function (id) {
+        get_essay: function(id) {
             var that = this;
             that.$http.get(this.essay_url + id).then((response) => {
                 this.essay = response.data;
+                that.fullscreenLoading = false;
             })
         },
 
-        get_load_status: function(){
-          return `ui ${this.fullscreenLoading ? "active" : "disabled"} inverted dimmer`;
+        get_load_status: function() {
+            return `ui ${this.fullscreenLoading ? "active" : "disabled"} inverted dimmer`
         },
 
     }

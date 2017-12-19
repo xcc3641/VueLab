@@ -26,15 +26,9 @@
         </div> -->
         <div class="ui hidden divider"></div>
         <div class="ui raised padded  text container segment">
-
-            <!-- <div class="ui active inverted dimmer">
-                <div class="ui text loader">Loading</div>
-            </div> -->
-
             <div v-bind:class="get_load_status()">
                 <div class="ui text loader">Loading</div>
             </div>
-
 
             <div class="ui large header">{{essay.data.hp_title}}</div>
             <div v-html=essay.data.hp_content></div>
