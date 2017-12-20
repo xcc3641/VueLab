@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>关于三</title>
     <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="poem.css">
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
         <div class="ui hidden divider"></div>
         <div class="ui raised padded text container segment">
-            <h1 class="ui large header">{{essay.title}}
-              <div v-if="essay.author !== null" class="ui sub header">{{essay.author}}</div>
-            </h1>
+            <div class="titile">{{essay.title}}</div>
+            <div v-if="essay.author !== null" class="subtitle">{{essay.author}}</div>
             <div v-html=essay.content></div>
         </div>
         <div class="ui hidden divider"></div>
