@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>关于三</title>
     <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
@@ -11,7 +12,9 @@
     <div id="app">
         <div class="ui hidden divider"></div>
         <div class="ui raised padded text container segment">
-            <div class="ui large header">{{essay.title}}</div>
+            <h1 class="ui large header">{{essay.title}}
+              <div v-if="essay.author !== null" class="ui sub header">{{essay.author}}</div>
+            </h1>
             <div v-html=essay.content></div>
         </div>
         <div class="ui hidden divider"></div>
