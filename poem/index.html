@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>关于三</title>
+    <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="ui hidden divider"></div>
+        <div class="ui raised padded text container segment">
+            <div class="ui large header">{{essay.title}}</div>
+            <div v-html=essay.content></div>
+        </div>
+        <div class="ui hidden divider"></div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-resource.js"></script>
+    <script src="coquettish.js"></script>
+</body>
+
+</html>
