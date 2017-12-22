@@ -16,9 +16,11 @@
         <!-- 内容 -->
         <div class="ui hidden divider"></div>
         <div class="ui poem raised padded text container segment">
+          <div v-show="!is_loading">
             <div class="titile">{{essay.title}}</div>
             <div v-if="essay.author !== null" class="subtitle">{{essay.author}}</div>
             <div v-html=essay.content></div>
+          </div>
         </div>
         <div class="ui hidden divider"></div>
         <!-- 按钮 -->

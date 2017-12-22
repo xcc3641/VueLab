@@ -13,6 +13,7 @@ new Vue({
         },
         next_disable: false,
         last_disable: true,
+        is_loading: true,
     },
 
     created: function() {
@@ -26,11 +27,13 @@ new Vue({
                 this.data = response.data;
                 this.essay = response.data[0];
                 this.essay.content = this.clean_content(this.essay.content);
+                this.is_loading = false;
                 this.fade_in();
             })
         },
 
         to_next_page: function(next) {
+            this.is_loading = true;
             next ? this.index += 1 : this.index -= 1;
             this.index = Math.max(this.index, 0);
             this.last_disable = this.index == 0;
@@ -40,6 +43,7 @@ new Vue({
                 this.essay.content = this.clean_content(this.essay.content);
             }
             this.next_disable = this.data.length - 1 <= this.index;
+            this.is_loading = false;
             this.fade_in();
         },
 
@@ -48,12 +52,12 @@ new Vue({
             return content.replace(/\r\n/g, "<br>");
         },
 
-        fade_in : function(){
-          $('.poem')
-              .transition({
-                animation : 'fade in',
-                duration : '300ms'
-          });
+        fade_in: function() {
+            $('.poem')
+                .transition({
+                    animation: 'fade in',
+                    duration: '300ms'
+                });
         },
     }
 
