@@ -26,6 +26,7 @@ new Vue({
                 this.data = response.data;
                 this.essay = response.data[0];
                 this.essay.content = this.clean_content(this.essay.content);
+                this.fade_in();
             })
         },
 
@@ -33,17 +34,26 @@ new Vue({
             next ? this.index += 1 : this.index -= 1;
             this.index = Math.max(this.index, 0);
             this.last_disable = this.index == 0;
-            console.log("index: "+this.index +" length: "+this.data.length);
-            if (this.data.length-1 >= this.index) {
+            console.log("index: " + this.index + " length: " + this.data.length);
+            if (this.data.length - 1 >= this.index) {
                 this.essay = this.data[this.index];
                 this.essay.content = this.clean_content(this.essay.content);
             }
-            this.next_disable = this.data.length -1 <= this.index;
+            this.next_disable = this.data.length - 1 <= this.index;
+            this.fade_in();
         },
 
         // assist
         clean_content: function(content) {
             return content.replace(/\r\n/g, "<br>");
+        },
+
+        fade_in : function(){
+          $('.poem')
+              .transition({
+                animation : 'fade in',
+                duration : '300ms'
+          });
         },
     }
 

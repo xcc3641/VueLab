@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>关于三</title>
-    <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/semantic.css" media="screen" title="no title" charset="utf-8"> -->
     <link rel="stylesheet" type="text/css" href="poem.css">
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +16,7 @@
     <div id="app">
         <!-- 内容 -->
         <div class="ui hidden divider"></div>
-        <div class="ui raised padded text container segment">
+        <div class="ui poem raised padded text container segment">
             <div class="titile">{{essay.title}}</div>
             <div v-if="essay.author !== null" class="subtitle">{{essay.author}}</div>
             <div v-html=essay.content></div>
@@ -24,14 +25,16 @@
         <!-- 按钮 -->
         <div class="ui text container">
             <div class="ui two padded column grid">
-                  <button class="ui grey basic button" v-bind:class="{disabled : last_disable}" @click="to_next_page(false)">上一首</button>
-                  <button class="ui grey basic button" v-bind:class="{disabled : next_disable}" @click="to_next_page(true)">下一首</button>
+                <button class="ui grey basic button" v-bind:class="{disabled : last_disable}" @click="to_next_page(false)">上一首</button>
+                <button class="ui grey basic button" v-bind:class="{disabled : next_disable}" @click="to_next_page(true)">下一首</button>
             </div>
         </div>
         <div class="ui hidden divider"></div>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.js"></script>
     <script src="poem.js"></script>
 </body>
 
