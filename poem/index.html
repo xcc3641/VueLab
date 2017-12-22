@@ -13,6 +13,8 @@
 
 <body>
     <div id="app">
+
+        <!-- 内容 -->
         <div class="ui hidden divider"></div>
         <div class="ui raised padded text container segment">
             <div class="titile">{{essay.title}}</div>
@@ -21,9 +23,10 @@
         </div>
         <div class="ui hidden divider"></div>
 
-          <div class="ui text container">
-            <div class="ui two column centered grid">
-                <div class="four column centered row">
+        <!-- 按钮 -->
+        <div class="ui text container">
+            <div class="ui two column grid">
+                <div class="left aligned four column centered row">
                     <div class="column">
                         <button class="ui grey basic button" v-bind:class="{disabled : last_disable}" @click="to_next_page(false)">上一首</button>
                     </div>
@@ -32,7 +35,7 @@
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
 
     </div>
     <script src="../js/vue.js"></script>
