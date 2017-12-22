@@ -31,30 +31,20 @@ new Vue({
 
         to_next_page: function(next) {
             next ? this.index += 1 : this.index -= 1;
-            this.index = Math.max(this.index,0);
-            this.last_disable = this.index==0;
-            console.log( this.data.length +" "+this.index);
+            this.index = Math.max(this.index, 0);
+            this.last_disable = this.index == 0;
+            console.log("index: "+this.index +" length: "+this.data.length);
             if (this.data.length-1 >= this.index) {
                 this.essay = this.data[this.index];
                 this.essay.content = this.clean_content(this.essay.content);
-                console.log(this.data);
-                console.log(this.essay);
-                this.next_disable = false;
-            } else {
-                this.next_disable = true;
             }
+            this.next_disable = this.data.length -1 <= this.index;
         },
 
         // assist
         clean_content: function(content) {
             return content.replace(/\r\n/g, "<br>");
         },
-
-        get_buttom_status: function(disbale) {
-            return `ui grey ${disbale?"disabled":""} basic button`;
-        },
-
-
     }
 
 });
