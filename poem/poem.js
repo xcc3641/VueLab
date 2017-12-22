@@ -32,20 +32,23 @@ new Vue({
             })
         },
 
-        to_next_page: function(next) {
-            this.is_loading = true;
-            next ? this.index += 1 : this.index -= 1;
-            this.index = Math.max(this.index, 0);
-            this.last_disable = this.index == 0;
-            console.log("index: " + this.index + " length: " + this.data.length);
-            if (this.data.length - 1 >= this.index) {
-                this.essay = this.data[this.index];
-                this.essay.content = this.clean_content(this.essay.content);
-            }
-            this.next_disable = this.data.length - 1 <= this.index;
-            this.is_loading = false;
-            this.fade_in();
-        },
+        // delay method
+        to_next_page: _.debounce(
+            function(next) {
+                this.is_loading = true;
+                next ? this.index += 1 : this.index -= 1;
+                this.index = Math.max(this.index, 0);
+                this.last_disable = this.index == 0;
+                console.log("index: " + this.index + " length: " + this.data.length);
+
+                if (this.data.length - 1 >= this.index) {
+                    this.essay = this.data[this.index];
+                    this.essay.content = this.clean_content(this.essay.content);
+                }
+                this.next_disable = this.data.length - 1 <= this.index;
+                this.is_loading = false;
+                this.fade_in();
+            }, 300),
 
         // assist
         clean_content: function(content) {
