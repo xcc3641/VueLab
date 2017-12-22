@@ -34,7 +34,7 @@ new Vue({
             this.index = Math.max(this.index,0);
             this.last_disable = this.index==0;
             console.log( this.data.length +" "+this.index);
-            if (this.data.length-1 > this.index) {
+            if (this.data.length-1 >= this.index) {
                 this.essay = this.data[this.index];
                 this.essay.content = this.clean_content(this.essay.content);
                 console.log(this.data);
