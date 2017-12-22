@@ -25,15 +25,9 @@
 
         <!-- 按钮 -->
         <div class="ui text container">
-            <div class="ui two column grid">
-                <div class="left aligned four column centered row">
-                    <div class="column">
-                        <button class="ui grey basic button" v-bind:class="{disabled : last_disable}" @click="to_next_page(false)">上一首</button>
-                    </div>
-                    <div class="column">
-                        <button class="ui grey basic button" v-bind:class="{disabled: next_disable}" @click="to_next_page(true)">下一首</button>
-                    </div>
-                </div>
+            <div class="ui two padded column grid">
+                  <button class="ui grey basic button" v-bind:class="{disabled : last_disable}" @click="to_next_page(false)">上一首</button>
+                  <button class="ui grey basic button" v-bind:class="{disabled : next_disable}" @click="to_next_page(true)">下一首</button>
             </div>
         </div>
 
