@@ -52,7 +52,7 @@ new Vue({
 
         // assist
         clean_content: function(content) {
-            return content.replace(/\r\n/g, "<br>");
+            return content.replace(/\r\n/g, "<br>").replace(/\s+/g,"");
         },
 
         fade_in: function() {
